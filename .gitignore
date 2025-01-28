@@ -1,7 +1,8 @@
-# Ignore all files
+# ignore all files
 *
 
-# Do not ignore C source files
+# do not ignore .c files
 !*.c
 
+# do not ignore .gitignore itself
 !.gitignore
