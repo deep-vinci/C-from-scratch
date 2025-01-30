@@ -6,8 +6,15 @@ int arr_len(int arr[])
     {
         printf("%d ", arr[i]);
     }
+    line_break();
     printf("%zu", sizeof(arr));
+    line_break();
     return sizeof(arr);
+}
+
+void line_break()
+{
+    puts("");
 }
 
 void main(int argc, char *argv[])
@@ -19,4 +26,5 @@ void main(int argc, char *argv[])
     int len_of_arr1 = sizeof(a);
     int len_of_arr2 = sizeof(a) / sizeof(a[0]);
     printf("%lu %lu %d %d %d %d", sizeof(b), sizeof(a), len_of_arr0, len_of_arr1, len_of_arr2, *a);
+    line_break();
 }
