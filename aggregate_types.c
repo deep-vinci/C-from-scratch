@@ -50,5 +50,18 @@ int main(int argc, char *argv[])
     struct nestedStruct mocked = {
         .name = "daslij",
     };
+
+#pragma pack(1)
+    struct NetworkPacket
+    {
+        int b;
+        char a;
+    };
+
+    struct NetworkPacket data = {
+        .a = 'A',
+        .b = 69,
+    };
+    printf("%lu", sizeof(data));
     printf("%s", mocked.name);
 }
