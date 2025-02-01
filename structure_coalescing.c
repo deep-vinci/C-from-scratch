@@ -20,6 +20,12 @@ struct coalesced
 
 #pragma pack()
 
+struct uncoalescedBitFields
+{
+    int a : 1; // 2^1 is gonna be {0, 0} bits or 2 values
+    int b : 2; // 2^3 is gonna be {0,0,0,0,0,0,0,0} bits or 8 values
+};
+
 int main(int argc, char *argv[])
 {
     struct uncoalesced dataUncoalesced = {
@@ -34,6 +40,12 @@ int main(int argc, char *argv[])
         .c = 'c',
     };
 
+    struct uncoalescedBitFields dataUncoalescedBitFields = {
+        .a = 1,
+        .b = 6,
+    };
+
     printf("%ld\n", sizeof(dataUncoalesced));
     printf("%ld\n", sizeof(dataCoalesced));
+    printf("%ld\n", sizeof(dataUncoalescedBitFields));
 }
