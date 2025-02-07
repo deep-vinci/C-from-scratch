@@ -2,7 +2,12 @@
 
 int main(int argc, char *argv[])
 {
-    printf("Size of int: %lu bytes\n", sizeof(int));
-    printf("Size of int pointer: %lu bytes\n", sizeof(int *));
+    int a = 1;
+    int *b = &a;
+
+    printf("Address of a is (%p) \n", (void *)&a);
+    printf("Address of b is (%p) \n", (void *)&b);
+    printf("Address of b is (%p) \n", (void *)b);
+
     return 0;
 }
